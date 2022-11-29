@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ windows-latest, macos-latest, ubuntu-latest ]
 
-        tests: [ reed-switch ]
+        tests: [ reed-switches ]
     
 
     runs-on: ${{ matrix.os }}
@@ -41,4 +41,4 @@ jobs:
       
       - name: Compile sketch
         run: |
-          arduino-cli compile -b "esp8266:esp8266:nodemcuv2" -e ./${{ matrix.tests }}
+          arduino-cli compile -b "esp8266:esp8266:nodemcuv2" -e ./testers/${{ matrix.tests }}
