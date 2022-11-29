@@ -33,7 +33,7 @@ jobs:
       matrix:
         os: [ windows-latest, macos-latest, ubuntu-latest ]
 
-        tests: [ reed-switches ]
+        tests: [ reed-switches, button ]
     
 
     runs-on: ${{ matrix.os }}
