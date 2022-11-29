@@ -37,6 +37,7 @@ jobs:
     
 
     runs-on: ${{ matrix.os }}
+    if: ${{ contains(steps.checkChanges.outputs.all_changed_files, matrix.tests) }}
   
     steps:
 
