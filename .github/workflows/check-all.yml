@@ -22,7 +22,6 @@ jobs:
         id: changedFiles
         uses: tj-actions/changed-files@v34.5.0
 
-
     # Compile code
 
   test:
