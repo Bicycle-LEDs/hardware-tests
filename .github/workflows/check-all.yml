@@ -43,19 +43,19 @@ jobs:
       # Clone repository
       
       - name: Clone repository
-        if: ${{ contains(${{ steps.checkChanges.outputs.all_changed_files }}, ${{ matrix.tests }}) }}
+        if: ${{ contains(steps.checkChanges.outputs.all_changed_files, matrix.tests) }}
         uses: actions/checkout@v3
 
       # Setup arduino CLI
       
       - name: Setup Arduino CLI
-        if: ${{ contains(${{ steps.checkChanges.outputs.all_changed_files }}, ${{ matrix.tests }}) }}
+        if: ${{ contains(steps.checkChanges.outputs.all_changed_files, matrix.tests) }}
         uses: arduino/setup-arduino-cli@v1
 
       # Configure platform
       
       - name: Configure platform
-        if: ${{ contains(${{ steps.checkChanges.outputs.all_changed_files }}, ${{ matrix.tests }}) }}
+        if: ${{ contains(steps.checkChanges.outputs.all_changed_files, matrix.tests) }}
         run: |
           arduino-cli core update-index --additional-urls https://arduino.esp8266.com/stable/package_esp8266com_index.json
           arduino-cli core install esp8266:esp8266 --additional-urls https://arduino.esp8266.com/stable/package_esp8266com_index.json
@@ -63,6 +63,6 @@ jobs:
       # Compile
       
       - name: Compile sketch
-        if: ${{ contains(${{ steps.checkChanges.outputs.all_changed_files }}, ${{ matrix.tests }}) }}
+        if: ${{ contains(steps.checkChanges.outputs.all_changed_files, matrix.tests) }}
         run: |
           arduino-cli compile -b "esp8266:esp8266:nodemcuv2" -e ./testers/${{ matrix.tests }}
