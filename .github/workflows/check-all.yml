@@ -1,11 +1,6 @@
 name: Check if can be compiled
 
-on:
- workflow_dispatch:
- push:
-    branches: [ "stable" ]
-    paths: [ ".github/workflows/build-stable.yml", "sketch/*" ]
-
+on: [workflow_dispatch, push]
 
 jobs:
 
