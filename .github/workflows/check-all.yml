@@ -26,6 +26,8 @@ jobs:
 
   test:
 
+    needs: checkChanges
+
     strategy:
       fail-fast: false
       matrix:
