@@ -4,6 +4,24 @@ on: [workflow_dispatch, push]
 
 jobs:
 
+  checkChanges:
+  
+  runs-on: ubuntu-latest
+
+  outputs:
+      output1: steps.checkChanges.outputs.out
+
+  steps:
+
+    # Clone repository
+  
+    - name: Clone repository
+      uses: actions/checkout@v3
+    
+    - name: Get changed files
+      uses: tj-actions/changed-files@v34.5.0
+
+
   # Compile code
 
   test:
@@ -17,6 +35,8 @@ jobs:
     
 
     runs-on: ${{ matrix.os }}
+    
+    if: steps.checkChanges.outputs.all_changed_files == ${{ matrix.tests }}
     
     steps:
 

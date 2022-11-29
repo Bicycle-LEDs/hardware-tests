@@ -13,7 +13,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  if(digitalRead(reed_switch_1) == 1) {
+  if(digitalRead(reed_switch_1) == 1 && reedSwitch2LastState == 0) {
     reedSwitch1LastState=1;
     Serial.println("Reed switch 1 active");
   } else reedSwitch1LastState=0;
