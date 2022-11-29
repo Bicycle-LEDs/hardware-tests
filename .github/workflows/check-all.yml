@@ -1,10 +1,10 @@
-name: Check compilation
+name: Check
 
 on: [workflow_dispatch, push]
 
 jobs:
 
-  checkChanges:
+  get-changed-files:
   
     runs-on: ubuntu-latest
 
@@ -24,7 +24,7 @@ jobs:
 
     # Compile code
 
-  test:
+  check:
 
     needs: checkChanges
 

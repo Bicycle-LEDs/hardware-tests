@@ -22,4 +22,5 @@ void loop() {
     reedSwitch2LastState=1;
     Serial.println("Reed switch 2 active");
   } else reedSwitch2LastState=0;
+  
 }
