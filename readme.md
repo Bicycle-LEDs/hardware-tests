@@ -4,8 +4,10 @@
 - ♻️ Hardware testing sketches
 
 
-## 🛠️ If you are looking for firmware:
+## 🛠️ If you are looking for something else:
+- 🎬 [Main site](https://modular-lamps.github.io/)
 - 🏗️ [Firmware repository](https://github.com/Modular-Lamps/firmware/)
+- 🧬 [Electronics](https://github.com/Modular-Lamps/electronics)
 
 ## ⚙️ Updates
 - ⚠️ Any updates are provided when needed
