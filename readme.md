@@ -9,5 +9,4 @@
 - 🏗️ [Firmware repository](https://github.com/Modular-Lamps/firmware/)
 - 🧬 [Electronics](https://github.com/Modular-Lamps/electronics)
 
-## ⚙️ Updates
-- ⚠️ Any updates are provided when needed
+## ⚙️ Under active development
