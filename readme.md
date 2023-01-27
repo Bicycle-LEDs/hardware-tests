@@ -5,8 +5,8 @@
 
 
 ## 🛠️ If you are looking for something else:
-- 🎬 [Main site](https://modular-lamps.github.io/)
-- 🏗️ [Firmware repository](https://github.com/Modular-Lamps/firmware/)
-- 🧬 [Electronics](https://github.com/Modular-Lamps/electronics)
+- 🎬 [Main site](https://bicycle-leds.github.io/)
+- 🏗️ [Firmware repository](https://github.com/Bicycle-LEDs/firmware/)
+- 🧬 [Electronics](https://github.com/Bicycle-LEDs/electronics)
 
 ## ⚙️ Under active development
