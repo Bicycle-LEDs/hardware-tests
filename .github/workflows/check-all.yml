@@ -8,8 +8,6 @@ jobs:
 
   check:
 
-    needs: get-changed-files
-
     strategy:
       fail-fast: false
       matrix:
