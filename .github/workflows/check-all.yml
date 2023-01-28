@@ -32,13 +32,14 @@ jobs:
       # Setup arduino CLI
       
       - name: Setup Arduino CLI
-        #if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
+        if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
         uses: arduino/setup-arduino-cli@master
 
       # Configure platform
+      # Arduino Nano Every with new CPU platform name is arduino:megaavr:nona4809:mode=off
       
       - name: Configure platform
-        #if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
+        if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
         run: |
           arduino-cli config init 
           arduino-cli config set library.enable_unsafe_install true
@@ -47,6 +48,6 @@ jobs:
       # Compile
       
       - name: Compile sketch
-        #if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
+        if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
         run: |
           arduino-cli compile -b "arduino:megaavr:nona4809:mode=off" -e ./testers/${{ matrix.test }}
