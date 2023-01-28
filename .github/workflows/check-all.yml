@@ -6,7 +6,7 @@ jobs:
 
   # Check
 
-  check:
+  compile:
 
     strategy:
       fail-fast: false
@@ -49,4 +49,4 @@ jobs:
       - name: Compile sketch
         if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
         run: |
-          arduino-cli compile -b "arduino:megaavr:nanoevery" -e ./testers/${{ matrix.test }}
+          arduino-cli compile -b "arduino:megaavr:nanoEvery" -e ./testers/${{ matrix.test }}
