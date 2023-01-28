@@ -32,21 +32,21 @@ jobs:
       # Setup arduino CLI
       
       - name: Setup Arduino CLI
-        if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
+        #if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
         uses: arduino/setup-arduino-cli@master
 
       # Configure platform
       
       - name: Configure platform
-        if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
+        #if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
         run: |
           arduino-cli config init 
           arduino-cli config set library.enable_unsafe_install true
-          arduino-cli core install arduino:megaavr
+          arduino-cli core install arduino:avr
           
       # Compile
       
       - name: Compile sketch
-        if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
+        #if: ${{ contains(steps.changed-files.outputs.all_changed_files, matrix.test) }}
         run: |
-          arduino-cli compile -b "arduino:megaavr:nanoEvery" -e ./testers/${{ matrix.test }}
+          arduino-cli compile -b "arduino:avr:nanoEvery " -e ./testers/${{ matrix.test }}
