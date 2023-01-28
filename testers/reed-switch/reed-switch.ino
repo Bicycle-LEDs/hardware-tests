@@ -13,5 +13,6 @@ void loop() {
   if (digitalRead(reed_switch) == 1 && reedSwitchLastState == 0) {
     reedSwitchLastState = 1;
     Serial.println("Reed switch active");
-  } else reedSwitchLastState = 0;
+  } 
+  else reedSwitchLastState = 0;
 }

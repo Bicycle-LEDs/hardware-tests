@@ -13,5 +13,6 @@ void loop() {
   if (digitalRead(button) == 1 && buttonLastState == 0) {
     buttonLastState = 1;
     Serial.println("Button active");
-  } else buttonLastState = 0;
+  } 
+  else buttonLastState = 0;
 }
