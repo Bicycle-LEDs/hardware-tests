@@ -1,4 +1,4 @@
-#define SENSOR_PIN D4
+#define SENSOR_PIN 1
 
 #include <OneWire.h>
 #include <DallasTemperature.h>
