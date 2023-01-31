@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ windows-latest, macos-latest, ubuntu-latest ]
-        test: [ button, reed-switch ]
+        test: [ button, reed-switch, temperature-sensor ]
 
     runs-on: ${{ matrix.os }}
   
@@ -44,6 +44,7 @@ jobs:
           arduino-cli config init 
           arduino-cli config set library.enable_unsafe_install true
           arduino-cli core install arduino:megaavr
+          arduino-cli lib install "DallasTemperature"
           
       # Compile
       
